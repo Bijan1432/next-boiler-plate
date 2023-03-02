@@ -6,8 +6,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { NavLink } from "./Navlink";
 import { BsSearch } from "react-icons/bs";
-import logo from "../../public/favicon.ico";
+
 import Dropdown from "react-bootstrap/Dropdown";
+
+//img
+import logo from "../../public/logo.png";
 
 function CollapsibleExample() {
   const searchDiv = useRef();
@@ -26,43 +29,56 @@ function CollapsibleExample() {
 
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link
-                as={NavLink}
-                href="/"
-                exact
-                className="nav-item nav-link"
-                onClick={() => {
-                  changeSearch(false);
-                }}
-              >
-                Home
-              </Nav.Link>
-              <Nav.Link
-                as={NavLink}
-                href="/about"
-                exact
-                className="nav-item nav-link"
-                onClick={() => {
-                  changeSearch(false);
-                }}
-              >
-                About
-              </Nav.Link>
-              <Nav.Link
-                as={NavLink}
-                href="/project"
-                exact
-                className="nav-item nav-link"
-                onClick={() => {
-                  changeSearch(false);
-                }}
-              >
-                Project
-              </Nav.Link>
+            <Nav className="mx-auto">
               <Dropdown>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                  PROPERTY TYPE
+                <Dropdown.Toggle
+                  className="btn
+                "
+                  id="dropdown-basic"
+                >
+                  REPORTS
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item>
+                    <Nav.Link
+                      as={NavLink}
+                      href="/project-listing"
+                      exact
+                      className="nav-item nav-link"
+                    >
+                      Project Listing
+                    </Nav.Link>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <Nav.Link
+                      as={NavLink}
+                      href="/project-listing"
+                      exact
+                      className="nav-item nav-link"
+                    >
+                      Premium Home
+                    </Nav.Link>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <Nav.Link
+                      as={NavLink}
+                      href="/project-listing"
+                      exact
+                      className="nav-item nav-link"
+                    >
+                      Smart Home
+                    </Nav.Link>
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+              <Dropdown>
+                <Dropdown.Toggle
+                  className="btn
+                "
+                  id="dropdown-basic"
+                >
+                  Premium Reports
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
@@ -104,24 +120,31 @@ function CollapsibleExample() {
                 exact
                 className="nav-item nav-link"
               >
+                Datacenter Database
+              </Nav.Link>
+              <Nav.Link
+                as={NavLink}
+                href="/contact"
+                exact
+                className="nav-item nav-link"
+              >
                 Contact
               </Nav.Link>
-              <Nav.Link className="nav-item nav-link" onClick={showSearch}>
+              <Nav.Link
+                as={NavLink}
+                href="/contact"
+                exact
+                className="nav-item nav-link"
+              >
+                CART
+              </Nav.Link>
+              <Nav.Link className="nav-item nav-link px-5" onClick={showSearch}>
                 <BsSearch />
               </Nav.Link>
-              {/* <Link href="/" passHref legacyBehavior>
-              <Nav.Link>Home</Nav.Link>
-            </Link>
-            <Link href="/project" passHref legacyBehavior>
-              <Nav.Link>Projects</Nav.Link>
-            </Link>
-            <Link href="/" passHref legacyBehavior>
-              <Nav.Link>About</Nav.Link>
-            </Link>
-            <Link href="/" passHref legacyBehavior>
-              <Nav.Link>Contact</Nav.Link>
-            </Link>  */}
             </Nav>
+            <div className="ps-4  ">
+              <button className="btn-primary">Log in</button>
+            </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>
